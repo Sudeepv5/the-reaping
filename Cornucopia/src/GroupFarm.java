@@ -1,6 +1,8 @@
-import java.io.*;
+
 import java.util.*;
-import java.math.*;
+
+
+
 public class GroupFarm{
     public static void main(String args[] ) throws Exception {
        Scanner in =new Scanner(System.in);
@@ -15,7 +17,7 @@ public class GroupFarm{
 		for(int j=0;j<c;j++)
 			farm[i][j]=(str.charAt(j));
 	}
-	
+	in.close();
 	boolean[][] visited=new boolean[r][c];
 	int count=0;
     for(int i = 0; i < farm.length; i ++){
@@ -40,41 +42,10 @@ public class GroupFarm{
 	        bfs(matrix, visited, i,j+1,label);
 	    }
 	 
-	 public static BigInteger getComb(int count)
+	 public static int getComb(int count)
 	 {
-		 BigInteger sum=new BigInteger("0");
-         BigInteger one=new BigInteger("1");
-         BigInteger two=new BigInteger("2");
-		 if(count==0)
-			 return one;
-		 if(count==1)
-			 return one;
-		 if(count==2)
-			 return two;
-		 
-		 if(count>2)
-			 for(int i=0;i<count;i++)
-			 {
-                if(i%2==0)
-			     {
-                    BigInteger b1=fact(count,i);                
-                    sum=sum.add(b1);
-                    }
-			 }
-		 return sum;
+		return (int)Math.pow(2, count-1);
 	 }
 	 
-	 static BigInteger fact(int n,int i)
-	 {
-         BigInteger one=new BigInteger("1");
-        if(i==0)
-            return one;
-        BigInteger prod=new BigInteger("1");
-         for(int k=i+1;k<=n;k++)
-             {
-        	 
-             prod=prod.multiply(new BigInteger(String.valueOf(k)));
-         }
-         return prod;
-	 }
+	 
     }

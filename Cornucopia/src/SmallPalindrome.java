@@ -9,6 +9,7 @@ public class SmallPalindrome {
 		String str=in.nextLine();
 		System.out.println(isPalindrome(str));
 		System.out.println(smallPalindrome(str,0));
+		in.close();
 		
 	}
 	
