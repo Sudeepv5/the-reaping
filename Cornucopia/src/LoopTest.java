@@ -1,13 +1,25 @@
 
 public class LoopTest {
 	
+	
+	public LoopTest()
+	{
+		System.out.println("from base");
+	}
+	
 	public static void main(String[] args)
 	{
-		
-		for(int i=100;i>=0;i--)
-			System.out.printf("%d",i);
-		
-		
+		LoopTest obja=new LoopTest();
+		Nested objb=new LoopTest().new Nested();
 	}
 
+	
+	public class Nested{
+		
+		public Nested()
+		{
+		System.out.println("from nested");
+		}
+	}
+	
 }

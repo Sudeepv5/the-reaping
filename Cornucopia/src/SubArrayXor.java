@@ -8,8 +8,8 @@ public class SubArrayXor {
     
     public static void printXor()
         {
-    	int i=07;
-        System.out.println(i);
+    	
+        System.out.println(12&17);
     }
 
     public static void main(String[] args) {

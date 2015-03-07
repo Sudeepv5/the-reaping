@@ -1,8 +1,6 @@
-	import java.io.*;
+
 	import java.util.*;
-	import java.text.*;
-	import java.math.*;
-	import java.util.regex.*;
+
 
 	public class CircleCity {
 
@@ -31,6 +29,7 @@
 	            {
 	            checkandPrintPossible(in.nextInt(),in.nextInt());
 	        }
+	        in.close();
 	    }
 	}
 
