@@ -3,29 +3,31 @@ public class AddLinkedLists {
 	
 	public static void main(String[] args)
 	{
-		SLinkedListNode list1=new SLinkedListNode(7);
+		SLinkedList list1=new SLinkedList(7);
 		list1.addTail(1);
 		list1.addTail(6);
 		list1.addTail(2);
-		SLinkedListNode list2=new SLinkedListNode(5);
+		list1.printList();
+		SLinkedList list2=new SLinkedList(5);
 		list2.addTail(9);
-		//list2.addTail(2);
-		AddLinkedLists a=new AddLinkedLists();
-		a.add(list1, list2).printList();
+		list2.addTail(2);
+		
+		list2.printList();
+		add(list1.head, list2.head).printList();
 		//System.out.println(a.LinkedtoNum(list2));
 		
 	}
 	
-	public SLinkedListNode add(SLinkedListNode head1,SLinkedListNode head2)
+	public static SLinkedList add(SNode head1,SNode head2)
 	{
 
 		return NumtoLinked(LinkedtoNum(head1)+LinkedtoNum(head2));
 		
 	}
 	
-	public int LinkedtoNum(SLinkedListNode head)
+	public static int LinkedtoNum(SNode head)
 	{
-		SLinkedListNode node=head;
+		SNode node=head;
 		int num=0,i=0;
 		while(node!=null)
 		{
@@ -39,13 +41,13 @@ public class AddLinkedLists {
 		return num;
 	}
 	
-	public SLinkedListNode NumtoLinked(int n)
+	public static SLinkedList NumtoLinked(int n)
 	{
-		SLinkedListNode list=null;
+		SLinkedList list=null;
 		while(n!=0)
 		{
 			if(list==null)
-				list=new SLinkedListNode(n%10);
+				list=new SLinkedList(n%10);
 			else
 				list.addTail(n%10);
 			n/=10;

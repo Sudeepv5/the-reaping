@@ -19,6 +19,7 @@ public class BSTgetElement {
 
 		//System.out.println(search(tree,3,0));
 		searchInOrder(tree,1);
+		System.out.println(tree.search(5));
 	}
 	
 	public static int search(SBinSearchTreeNode tree, int k,int count)

@@ -3,8 +3,7 @@ public class LinkedListPartition {
 	
 	public static void main(String[] args)
 	{
-		LinkedListPartition lp=new LinkedListPartition();
-        SLinkedListNode llt_in = new SLinkedListNode(2);
+        SLinkedList llt_in = new SLinkedList(2);
         llt_in.addTail(6);
         llt_in.addTail(43);
         llt_in.addTail(5);
@@ -12,41 +11,37 @@ public class LinkedListPartition {
         llt_in.addTail(32);
         llt_in.addTail(9);
         llt_in.printList();
-		lp.partition(llt_in, 11).printList();
+		partition(llt_in.head, 11).printList();
 		
 	}
 	
-	public SLinkedListNode partition(SLinkedListNode head, int x)
+	public static SLinkedList partition(SNode head, int x)
 	{
-		SLinkedListNode bef=null;
-		SLinkedListNode aft=null;
+		SLinkedList bef=null;
+		SLinkedList aft=null;
 		
-		SLinkedListNode node = head;
+		SNode node = head;
 		
-		while(node.next!=null)
+		while(node!=null)
 		{			
 			if((int)node.data > x)
 			{
 				if(aft==null)
-					aft=new SLinkedListNode(node.data);
+					aft=new SLinkedList(node.data);
 				else
-					aft.addTail(node.data);
-						
+					aft.addTail(node.data);		
 			}
 			else
 			{
 				if(bef==null)
-					bef=new SLinkedListNode(node.data);
+					bef=new SLinkedList(node.data);
 				else
 					bef.addTail(node.data);
 				
 			}
 			node=node.next;
 		}
-		//while(bef.next!=null)
-		//	bef=bef.next;
-		
-		//bef.next=aft;
+		bef.last().next=aft.head;
 		return bef;
 	}
 

@@ -8,7 +8,7 @@ public class StringPerms {
 	
 	public static void main(String[] args) {
 		
-		HashSet<String> perms=getPermutations("see");
+		HashSet<String> perms=getPermutations("sudeep");
 		Iterator<String> itr=perms.iterator();
 		while(itr.hasNext())
 		{

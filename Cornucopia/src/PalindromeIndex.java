@@ -35,6 +35,8 @@ public class PalindromeIndex {
         
         for(int i=0;i<c;i++)
             System.out.println(getIndex(in.nextLine()));
+        
+        
         in.close();
     }
 }
