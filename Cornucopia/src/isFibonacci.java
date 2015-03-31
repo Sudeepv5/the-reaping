@@ -1,7 +1,6 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
-
 public class isFibonacci {
 	
 	public static void printFibo(BigInteger n)
@@ -9,7 +8,7 @@ public class isFibonacci {
 	
     BigInteger first=new BigInteger("0");
     BigInteger second=new BigInteger("1");
-    long start=System.currentTimeMillis();
+    long start=System.nanoTime();
     long end;
     while(first.compareTo(n)<=0)
         {
@@ -18,12 +17,12 @@ public class isFibonacci {
         second=temp;
         if(first.compareTo(n)==0)
             {
-        	end=System.currentTimeMillis();
+        	end=System.nanoTime();
             System.out.println("IsFibo "+(end-start));
             return;
         }
     }
-    end=System.currentTimeMillis();
+    end=System.nanoTime();
     System.out.println("IsNotFibo "+(end-start));
     return;
 }

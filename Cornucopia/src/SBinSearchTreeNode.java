@@ -12,6 +12,11 @@ public class SBinSearchTreeNode {
 		this.right=null;
 	}
 	
+	SBinSearchTreeNode()
+	{
+
+	}
+	
 	public void insert(int v)
 	{
 		insert(this,v);

@@ -1,47 +1,49 @@
-
 public class LinkedListPartition {
+	
 	
 	public static void main(String[] args)
 	{
-        SLinkedList llt_in = new SLinkedList(2);
-        llt_in.addTail(6);
-        llt_in.addTail(43);
-        llt_in.addTail(5);
-        llt_in.addTail(17);
-        llt_in.addTail(32);
-        llt_in.addTail(9);
-        llt_in.printList();
-		partition(llt_in.head, 11).printList();
-		
+        SListNode<Integer> link = new SListNode<Integer>(4);
+        link.add(6);
+        link.add(43);
+        link.add(5);
+        link.add(17);
+        link.add(32);
+        link.add(9);
+        link.toString();
+        System.out.println(link.toString());
+		System.out.println(partition(link, 11).toString());	
 	}
 	
-	public static SLinkedList partition(SNode head, int x)
+	public static SListNode<Integer> partition(SListNode<Integer> head, int x)
 	{
-		SLinkedList bef=null;
-		SLinkedList aft=null;
+		SListNode<Integer> bef=null;
+		SListNode<Integer> aft=null;
 		
-		SNode node = head;
+		SListNode<Integer> node = head;
 		
 		while(node!=null)
 		{			
-			if((int)node.data > x)
+			if(node.data > x)
 			{
 				if(aft==null)
-					aft=new SLinkedList(node.data);
+					aft=new SListNode<Integer>(node.data);
 				else
-					aft.addTail(node.data);		
+					aft.add(node.data);		
 			}
 			else
 			{
 				if(bef==null)
-					bef=new SLinkedList(node.data);
+					bef=new SListNode<Integer>(node.data);
 				else
-					bef.addTail(node.data);
+					bef.add(node.data);
 				
 			}
 			node=node.next;
 		}
-		bef.last().next=aft.head;
+		SListNode<Integer> fin=bef;
+		while(fin.next!=null)
+		fin.next=aft;
 		return bef;
 	}
 

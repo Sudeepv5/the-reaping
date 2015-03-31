@@ -3,20 +3,21 @@ public class Remove_Duplicate_From_LLT {
 	
 	public static void main(String[] args)
     {
-        SLinkedList llt_in = new SLinkedList(2);
-        llt_in.addTail(2);
-        llt_in.addTail(3);
-        llt_in.addTail(5);
-        llt_in.addTail(6);
-        llt_in.addTail(5);
-        llt_in.addTail(2);
-        Solution(llt_in.head);
-        llt_in.printList();
+		SListNode<Integer> llt_in = new SListNode<Integer>(2);
+        llt_in.add(2);
+        llt_in.add(3);
+        llt_in.add(5);
+        llt_in.add(6);
+        llt_in.add(5);
+        llt_in.add(2);
+        Solution(llt_in);
+        llt_in.print();
+        
     }
 
-    public static void Solution(SNode head)
+    public static void Solution(SListNode<Integer> head)
     {         
-        SNode i, j;
+    	SListNode<Integer> i, j;
         i = head;
         while (i != null)
         {

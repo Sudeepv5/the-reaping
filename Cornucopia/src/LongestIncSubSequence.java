@@ -20,6 +20,8 @@ public class LongestIncSubSequence {
                 LIS[i]=Math.max(LIS[i],LIS[j]+1);
         }
         
+        
+        
         int max=LIS[0];
         for(int k=1;k<n;k++){
             
